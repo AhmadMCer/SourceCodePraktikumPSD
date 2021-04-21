@@ -10,6 +10,7 @@ public class MaxSum1 {
 
                 for (int k = i; k <= j; k++)
                     thisSum += a[k];
+
                 if (thisSum > maxSum)
                     maxSum = thisSum;
             }
