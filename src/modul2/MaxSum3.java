@@ -31,11 +31,7 @@ public class MaxSum3 {
             System.out.print(a[i] + " ");
         System.out.println();
 
-        System.out.println(
-                "maxLeftSum = " + maxLeftSum + "\nmaxRightSum = " + maxRightSum +
-                "\nmaxLeftBorderSum = " + maxLeftBorderSum + "\nmaxRightBorderSum = " + maxRightBorderSum +
-                "\nmaxLeftBorderSum + maxRightBorderSum = " + (maxLeftBorderSum + maxRightBorderSum)
-        );
+        System.out.println("maxLeftSum = " + maxLeftSum + "\nmaxRightSum = " + maxRightSum + "\nmaxLeftBorderSum = " + maxLeftBorderSum + "\nmaxRightBorderSum = " + maxRightBorderSum + "\nmaxLeftBorderSum + maxRightBorderSum = " + (maxLeftBorderSum + maxRightBorderSum));
         System.out.println();
 
         return max3(maxLeftSum, maxRightSum, maxLeftBorderSum + maxRightBorderSum);
