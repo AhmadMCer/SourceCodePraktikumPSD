@@ -17,6 +17,7 @@ public class MaxSum4_Random {
     }
 
     public static void main(String[] args) {
+        double start = System.currentTimeMillis();
         Random numRandom = new Random();
         int[] a = new int[1000];
         int maxSum;
@@ -26,5 +27,8 @@ public class MaxSum4_Random {
 
         maxSum = maxSubSum4(a);
         System.out.println("Max sum is " + maxSum);
+        double finish = System.currentTimeMillis();
+        double timeElapsed = (finish - start) / 1000;
+        System.out.println("Time Execution: " + timeElapsed + " s");
     }
 }

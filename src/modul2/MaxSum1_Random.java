@@ -21,6 +21,7 @@ public class MaxSum1_Random {
     }
 
     public static void main(String[] args) {
+        double start = System.currentTimeMillis();
         Random acak = new Random();
         int[] a = new int[1000];
         int maxSum;
@@ -30,5 +31,8 @@ public class MaxSum1_Random {
 
         maxSum = maxSubSum1(a);
         System.out.println("Max sum is " + maxSum);
+        double finish = System.currentTimeMillis();
+        double timeElapsed = (finish - start) / 1000;
+        System.out.println("Time Execution: " + timeElapsed + " s");
     }
 }
