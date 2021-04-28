@@ -22,11 +22,13 @@ public class Fib4_Timer {
     }
 
     public static void main(String[] args) {
-        double timeStart = System.nanoTime();
-        long fib = fib4(9);
-        double timeFinish = System.nanoTime();
-        double timeElapsed = timeFinish - timeStart ;
-        System.out.println(fib);
-        System.out.println("\nTime execution : " + timeElapsed + " ns");
+        double timeStart = System.currentTimeMillis();
+        int n = 50;
+        long fib = fib4(n);
+        System.out.println("n\t\t: " + n);
+        System.out.println("fib(n)\t: " + fib);
+        double timeFinish = System.currentTimeMillis();
+        double timeElapsed = (timeFinish - timeStart) / 1000;
+        System.out.println("\nTime execution : " + timeElapsed + " s");
     }
 }

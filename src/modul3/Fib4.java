@@ -22,7 +22,9 @@ public class Fib4 {
     }
 
     public static void main(String[] args) {
-        long fib = fib4(9);
-        System.out.println(fib);
+        int n = 10;
+        long fib = fib4(n);
+        System.out.println("n\t\t: " + n);
+        System.out.println("fib(n)\t: " + fib);
     }
 }

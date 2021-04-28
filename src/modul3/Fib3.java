@@ -14,7 +14,9 @@ public class Fib3 {
     }
 
     public static void main(String[] args) {
-        long fib = fib3(9);
-        System.out.println(fib);
+        int n = 10;
+        long fib = fib3(n);
+        System.out.println("n\t\t: " + n);
+        System.out.println("fib(n)\t: " + fib);
     }
 }

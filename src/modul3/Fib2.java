@@ -9,7 +9,9 @@ public class Fib2 {
     }
 
     public static void main(String[] args) {
-        long fib = fib2(9);
-        System.out.println(fib);
+        int n = 10;
+        long fib = fib2(n);
+        System.out.println("n\t\t: " + n);
+        System.out.println("fib(n)\t: " + fib);
     }
 }
