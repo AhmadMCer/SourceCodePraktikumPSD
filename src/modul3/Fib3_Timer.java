@@ -16,9 +16,8 @@ public class Fib3_Timer {
     public static void main(String[] args) {
         double timeStart = System.currentTimeMillis();
         int n = 50;
-        long fib = fib3(n);
         System.out.println("n\t\t: " + n);
-        System.out.println("fib(n)\t: " + fib);
+        System.out.println("fib(n)\t: " + fib3(n));
         double timeFinish = System.currentTimeMillis();
         double timeElapsed = (timeFinish - timeStart) / 1000;
         System.out.println("\nTime execution : " + timeElapsed + " s");

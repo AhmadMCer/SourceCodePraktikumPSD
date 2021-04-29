@@ -23,8 +23,10 @@ public class Fib4 {
 
     public static void main(String[] args) {
         int n = 10;
-        long fib = fib4(n);
+        int bilangan = 2;
+        int pangkat = 10;
         System.out.println("n\t\t: " + n);
-        System.out.println("fib(n)\t: " + fib);
+        System.out.println("fib(n)\t: " + fib4(n));
+        System.out.println(bilangan + "^" + pangkat + "\t: " + rekursif(pangkat, bilangan));
     }
 }
