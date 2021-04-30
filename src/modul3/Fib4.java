@@ -27,6 +27,6 @@ public class Fib4 {
         int pangkat = 10;
         System.out.println("n\t\t: " + n);
         System.out.println("fib(n)\t: " + fib4(n));
-        System.out.println(bilangan + "^" + pangkat + "\t: " + rekursif(pangkat, bilangan));
+        System.out.println("pangkat\t: " + rekursif(pangkat, bilangan));
     }
 }
