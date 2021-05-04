@@ -84,7 +84,7 @@ public class Testing {
         System.out.println("\nRemove index");
         System.out.print("Input index data yang akan dihapus : ");
         int hapusIndex = scan.nextInt();
-        link.remove(hapus);
+        link.removeAt(hapusIndex);
         link.printNode();
 
         // coba removeFirst
@@ -106,5 +106,9 @@ public class Testing {
         // length
         System.out.println();
         link.length();
+
+        // coba clear
+        System.out.println();
+        link.clear();
     }
 }

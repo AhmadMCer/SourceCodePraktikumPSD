@@ -135,17 +135,21 @@ public class LinkedList implements List {
     public void removeAt(int index) {
         try {
             Node temp = head;
+            boolean found = false;
             int i = 0;
-            while (temp != null){
+            while (temp != null) {
                 if (index == 0){
-                    temp.next = temp.next.next;
-                    System.out.println("Data index ke-" +index+ " berhasil dihapus");
-                    break;
-                } else if (i == index-1){
                     this.removeFirst();
                     System.out.println("Data index ke-" +index+ " berhasil dihapus");
                     break;
-                } temp = temp.next;
+                } else if (i == index-1) {
+                    temp.next = temp.next.next;
+                    System.out.println("Data index ke-" +index+ " berhasil dihapus");
+                    break;
+                } else {
+                    temp = temp.next;
+                    i++;
+                }
             }
         } catch (Exception e){
             System.out.println("Data index ke-" +index+ " tidak ditemukan");
@@ -211,6 +215,16 @@ public class LinkedList implements List {
     public void printNode() {
         Node temp;
         temp = head;
+        while (temp != null){
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    public void printNodes(Node input) {
+        Node temp;
+        temp = input;
         while (temp != null){
             System.out.print(temp.data + " ");
             temp = temp.next;
