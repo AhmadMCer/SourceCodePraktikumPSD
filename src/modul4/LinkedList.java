@@ -222,16 +222,6 @@ public class LinkedList implements List {
         System.out.println();
     }
 
-    public void printNodes(Node input) {
-        Node temp;
-        temp = input;
-        while (temp != null){
-            System.out.print(temp.data + " ");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
-
     public int length() {
         Node temp = head;
         int i = 0;
