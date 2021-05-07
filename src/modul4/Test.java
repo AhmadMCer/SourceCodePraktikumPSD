@@ -26,7 +26,7 @@ public class Test {
             System.out.println("14. length");
             System.out.println(" 0. Keluar");
 
-            System.out.print("> ");
+            System.out.print("\n> ");
             code = scan.nextInt();
             System.out.println();
 

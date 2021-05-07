@@ -36,14 +36,14 @@ public class LinkedList implements List {
                 input.next = temp.next;
                 temp.next = input;
                 found = true;
-                System.out.println("Memasukkan data "+input.data+" setelah data "+key+" sukses");
+                System.out.println("Memasukkan data " + input.data + " setelah data " + key + " sukses");
                 break;
             }
             temp = temp.next;
         }
         while (temp != null);
         if (!found)
-            System.out.println("Data "+key+" tidak ditemukan!");
+            System.out.println("Data " + key + " tidak ditemukan!");
     }
 
     public void insertBefore(int key, Node input) {
@@ -52,19 +52,17 @@ public class LinkedList implements List {
             while (temp != null){
                 if (temp.data == key && temp == head){
                     this.addFirst(input);
-                    System.out.println("Memasukkan data "+input.data+
-                            " sebelum data "+key+" sukses!");
+                    System.out.println("Memasukkan data " + input.data + " sebelum data " + key + " sukses!");
                     break;
-                } else  if (temp.next.data == key){
+                } else if (temp.next.data == key){
                     input.next = temp.next;
                     temp.next = input;
-                    System.out.println("Memasukkan data "+input.data+
-                            " sebelum data"+key+" sukses!");
+                    System.out.println("Memasukkan data " + input.data + " sebelum data" + key + " sukses!");
                     break;
                 } temp = temp.next;
             }
         } catch (Exception e){
-            System.out.println("Data "+key+" tidak ditemukan!");
+            System.out.println("Data " + key + " tidak ditemukan!");
         }
     }
 
@@ -76,23 +74,21 @@ public class LinkedList implements List {
             if (index == 0){
                 this.addFirst(input);
                 found = true;
-                System.out.println("Data "+input.data+" berhasil " +
-                        "dimasukkan pada index "+index);
+                System.out.println("Data " + input.data + " berhasil dimasukkan pada index " + index);
                 break;
             } else if (i == index-1){
                 input.next = temp.next;
                 temp.next = input;
                 found = true;
-                System.out.println("Data "+input.data+" berhasil " +
-                        "dimasukkan pada index "+index);
+                System.out.println("Data " + input.data + " berhasil dimasukkan pada index " + index);
                 break;
-            }else{
+            } else {
                 temp = temp.next;
                 i++;
             }
         }
         if (!found)
-            System.out.println("Index "+index+" out of bound");
+            System.out.println("Index " + index + " out of bound");
     }
 
     public void replace(int data1, int data2) {
@@ -102,14 +98,13 @@ public class LinkedList implements List {
             if (temp.data == data1){
                 temp.data = data2;
                 found = true;
-                System.out.println("Data "+data1+" berhasil diganti " +
-                        "dengan data "+data2);
+                System.out.println("Data " + data1 + " berhasil diganti dengan data " + data2);
             } else {
                 temp = temp.next;
             }
         }
         if (!found){
-            System.out.println("Data "+data1+" tidak ditemukan!");
+            System.out.println("Data " + data1 + " tidak ditemukan!");
         }
     }
 
@@ -119,41 +114,41 @@ public class LinkedList implements List {
             while (temp != null){
                 if (temp.next.data == data){
                     temp.next = temp.next.next;
-                    System.out.println("Data " +data+ " berhasil dihapus");
+                    System.out.println("Data " + data + " berhasil dihapus");
                     break;
                 } else if (temp.data == data && temp == head){
                     this.removeFirst();
-                    System.out.println("Data "+data+" berhasil dihapus");
+                    System.out.println("Data " + data + " berhasil dihapus");
                     break;
                 } temp = temp.next;
             }
         } catch (Exception e){
-            System.out.println("Data "+data+" tidak ditemukan");
+            System.out.println("Data " + data + " tidak ditemukan");
         }
     }
 
     public void removeAt(int index) {
-        try {
-            Node temp = head;
-            boolean found = false;
-            int i = 0;
-            while (temp != null) {
-                if (index == 0){
-                    this.removeFirst();
-                    System.out.println("Data index ke-" +index+ " berhasil dihapus");
-                    break;
-                } else if (i == index-1) {
-                    temp.next = temp.next.next;
-                    System.out.println("Data index ke-" +index+ " berhasil dihapus");
-                    break;
-                } else {
-                    temp = temp.next;
-                    i++;
-                }
+        Node temp = head;
+        boolean found = false;
+        int i = 0;
+        while (temp != null) {
+            if (index == 0){
+                this.removeFirst();
+                found = true;
+                System.out.println("Data index ke-" + index + " berhasil dihapus");
+                break;
+            } else if (i == index-1) {
+                temp.next = temp.next.next;
+                found = true;
+                System.out.println("Data index ke-" + index + " berhasil dihapus");
+                break;
+            } else {
+                temp = temp.next;
+                i++;
             }
-        } catch (Exception e){
-            System.out.println("Data index ke-" +index+ " tidak ditemukan");
         }
+        if (!found)
+            System.out.println("Index " + index + " out of bound");
     }
 
     public void removeFirst() {
@@ -167,7 +162,7 @@ public class LinkedList implements List {
                 temp = null;
             }
         } else {
-            System.out.println("List kosong");
+            System.out.println("Data kosong!");
         }
     }
 
@@ -185,7 +180,7 @@ public class LinkedList implements List {
                 temp = null;
             }
         } else {
-            System.out.println("List kosong!");
+            System.out.println("Data kosong!");
         }
     }
 
@@ -202,13 +197,13 @@ public class LinkedList implements List {
         while (temp != null){
             if (temp.data == data){
                 found = true;
-                System.out.println(data+" ditemukan pada index ke"+i);
+                System.out.println(data + " ditemukan pada index ke " + i);
             }
             i++;
             temp = temp.next;
         }
         if (!found){
-            System.out.println("Data tidak ditemukan");
+            System.out.println("Data tidak ditemukan!");
         }
     }
 
@@ -226,14 +221,14 @@ public class LinkedList implements List {
         Node temp = head;
         int i = 0;
         if (isEmpty())
-            System.out.println("data kosong!");
+            System.out.println("Data kosong!");
         else{
             while (temp != null){
                 temp = temp.next;
                 i++;
             }
         }
-        System.out.println("Panjang data : "+i);
+        System.out.println("Panjang data : " + i);
         return i;
     }
 }
