@@ -12,7 +12,17 @@ public class List implements Stack{
         }
     }
 
-    public int pop() {
+    public void pop() {
+        if (!isEmpty()) {
+            Node temp = tos;
+            tos = tos.next;
+            temp.next = null;
+            System.out.println("Yang di POP: " + temp.data.toString());
+        } else
+            System.out.println("Tidak bisa karena stack kosong!");
+    }
+
+    public int popReturn() {
         if (!isEmpty()) {
             Node temp = tos;
             tos = tos.next;

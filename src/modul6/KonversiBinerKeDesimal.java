@@ -28,7 +28,7 @@ public class KonversiBinerKeDesimal {
         int desimal = 0;
         while (!stack.isEmpty()) {
             int biner;
-            biner = stack.pop();
+            biner = stack.popReturn();
             desimal += biner * Math.pow(2, exponent);
             exponent++;
         }
