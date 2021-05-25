@@ -3,7 +3,7 @@ package modul6;
 import java.util.Scanner;
 public class MainProgram {
     public static void main(String[] args) {
-        List stack = new List();
+        Stack stack = new Stack();
         Scanner scan = new Scanner(System.in);
 
         int code;

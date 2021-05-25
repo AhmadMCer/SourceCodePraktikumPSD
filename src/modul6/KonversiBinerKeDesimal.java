@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class KonversiBinerKeDesimal {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        List stack = new List();
+        Stack stack = new Stack();
 
         System.out.println("Konversi Biner ke Desimal");
         System.out.println("Masukkan Biner (ketik 2 untuk selesai)");
