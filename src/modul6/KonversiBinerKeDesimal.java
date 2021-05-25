@@ -25,14 +25,14 @@ public class KonversiBinerKeDesimal {
         } while (!stop);
 
         int exponent = 0;
-        int desimal = 0;
+        int decimal = 0;
         while (!stack.isEmpty()) {
             int biner;
             biner = stack.popReturn();
-            desimal += biner * Math.pow(2, exponent);
+            decimal += biner * Math.pow(2, exponent);
             exponent++;
         }
 
-        System.out.println("\n" + desimal);
+        System.out.println("\n" + decimal);
     }
 }
