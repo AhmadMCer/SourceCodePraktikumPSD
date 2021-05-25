@@ -129,6 +129,8 @@ public class MainProgram {
                 case 0:
                     stop = true;
                     break;
+                default:
+                    System.out.println("[EROR] Kode tidak dikenal!");
             }
             System.out.println();
         } while (!stop);
