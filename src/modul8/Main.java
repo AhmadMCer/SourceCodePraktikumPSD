@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Scanner scanInt = new Scanner(System.in);
-        HashMap<Integer, String> hashMap = new HashMap<>();
+        HashMap<Integer, String> hashMap = new HashMap<Integer, String>();
 
         int code;
         boolean stop = false;
@@ -61,7 +61,7 @@ public class Main {
                     if (useKey.equalsIgnoreCase("y")) {
                         System.out.println(hashMap.containsKey(null));
                     } else if (useKey.equalsIgnoreCase("n")) {
-                        System.out.println("Masukkan key\t: ");
+                        System.out.print("Masukkan key\t: ");
                         key = scanInt.nextInt();
                         System.out.println(hashMap.containsKey(key));
                     } else {
@@ -74,9 +74,17 @@ public class Main {
                     System.out.println(hashMap.containsValue(value));
                     break;
                 case 5:
-                    System.out.print("Masukkan key\t: ");
-                    key = scanInt.nextInt();
-                    hashMap.remove(key);
+                    System.out.print("Apakah key-nya null? (y/n) ");
+                    useKey = scan.nextLine();
+                    if (useKey.equalsIgnoreCase("y")) {
+                        hashMap.remove(null);
+                    } else if (useKey.equalsIgnoreCase("n")) {
+                        System.out.print("Masukkan key\t: ");
+                        key = scanInt.nextInt();
+                        hashMap.remove(key);
+                    } else {
+                        System.out.println("[EROR] Kode salah!");
+                    }
                     break;
                 case 6:
                     System.out.println(hashMap.size());

@@ -45,7 +45,7 @@ public class HashMap<K, V> {
 
     public boolean containsValue(Object value) {
         for (int i = 0; i < table.length; i++) {
-            if (table[i] != null && table[i].getVal() == value) {
+            if (table[i] != null && table[i].getVal().equals(value)) {
                 return true;
             }
         }
