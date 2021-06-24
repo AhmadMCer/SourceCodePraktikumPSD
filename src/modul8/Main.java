@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Scanner scanInt = new Scanner(System.in);
-        HashMap<Integer, String> hashMap = new HashMap<Integer, String>();
+        HashMap<Integer, String> hashMap = new HashMap<>();
 
         int code;
         boolean stop = false;
