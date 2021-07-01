@@ -88,41 +88,37 @@ public class BinarySearchTree {
         }
     }
 
-    void remove(int input) {
-        if (this.remove(input, root) == null) {
-            System.out.println("Data " + input + " tidak ada dalam tree!");
-        } else {
-            root = remove(input, root);
-        }
+    public void remove(int input) {
+        root = remove(input, root);
     }
 
-    Node remove(int input, Node temp) {
+    private Node remove(int input, Node temp) {
         if (temp == null) {
             return null;
-        } else {
-            if (this.checking(input) == true) {
-                if (input < temp.data) {
-                    temp.left = remove(input, temp.left);
-                } else {
-                    if (input > temp.data) {
-                        temp.right = remove(input, temp.right);
-                    } else {
-                        if (temp.left != null && temp.right != null) {
-                            temp.data = temp.right.data;
-                            this.findMin();
-                            temp.right = remove(temp.data, temp.right);
-                        } else {
-                            temp = temp.left != null ? temp.left : temp.right;
-                            System.out.println("Data " + input + " berhasil dihapus!");
-                        }
-                    }
-                }
-            } else {
+        }
+
+        if (input == temp.data) {
+            if (temp.left == null && temp.right == null) {
                 return null;
             }
 
-            return temp;
+            if (temp.left == null) {
+                return temp.right;
+            }
+
+            if (temp.right == null) {
+                return temp.left;
+            }
+
+            temp.data = temp.right.data;
+            temp.right = remove(temp.data, temp.right);
+        } else if (input < temp.data) {
+            temp.left = remove(input, temp.left);
+        } else {
+            temp.right = remove(input, temp.right);
         }
+
+        return temp;
     }
 
     private boolean checking(int input) {
@@ -184,6 +180,71 @@ public class BinarySearchTree {
             return 1;
         } else {
             return this.getLeafCountHelper(data.left) + this.getLeafCountHelper(data.right);
+        }
+    }
+
+    void order(int code) {
+        switch (code) {
+            case 1:
+                preOrder(root);
+                System.out.println();
+                break;
+            case 2:
+                inOrder(root);
+                System.out.println();
+                break;
+            case 3:
+                postOrder(root);
+                System.out.println();
+                break;
+            case 4:
+                preOrder(root);
+                System.out.println();
+                inOrder(root);
+                System.out.println();
+                postOrder(root);
+                System.out.println();
+                break;
+            case 0:
+                break;
+            default:
+                System.out.println("[EROR] Kode salah!");
+        }
+    }
+
+    private void preOrder(Node temp) {
+        if (!isEmpty()) {
+            if (temp != null) {
+                System.out.print(temp.data + " ");
+                preOrder(temp.left);
+                preOrder(temp.right);
+            }
+        } else {
+            System.out.println("[EROR] Tree masih kosong!");
+        }
+    }
+
+    private void inOrder(Node temp) {
+        if (!isEmpty()) {
+            if (temp != null) {
+                inOrder(temp.left);
+                System.out.print(temp.data + " ");
+                inOrder(temp.right);
+            }
+        } else {
+            System.out.println("[EROR] Tree masih kosong!");
+        }
+    }
+
+    private void postOrder(Node temp) {
+        if (!isEmpty()) {
+            if (temp != null) {
+                postOrder(temp.left);
+                postOrder(temp.right);
+                System.out.print(temp.data + " ");
+            }
+        } else {
+            System.out.println("[EROR] Tree masih kosong!");
         }
     }
 }

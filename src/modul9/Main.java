@@ -10,14 +10,15 @@ public class Main {
         boolean stop = false;
         do {
             System.out.println("Binary Search Tree");
-            System.out.println("1. insert");
-            System.out.println("2. find");
-            System.out.println("3. findMax");
-            System.out.println("4. findMin");
-            System.out.println("5. remove");
-            System.out.println("6. removeAll");
-            System.out.println("7. findDirectory");
-            System.out.println("8. getLeafCount");
+            System.out.println("1. Insert");
+            System.out.println("2. Find");
+            System.out.println("3. Find Max");
+            System.out.println("4. Find Min");
+            System.out.println("5. Remove");
+            System.out.println("6. Remove All");
+            System.out.println("7. Find Directory");
+            System.out.println("8. Get Leaf Count");
+            System.out.println("9. Order");
             System.out.println("0. Keluar");
             System.out.print("\n> ");
             code = scanInt.nextInt();
@@ -59,11 +60,20 @@ public class Main {
                 case 8:
                     System.out.println("Jumlah leaf: " + bst.getLeafCount());
                     break;
+                case 9:
+                    System.out.println("Order");
+                    System.out.println("1. Pre Order");
+                    System.out.println("2. In Order");
+                    System.out.println("3. Post Order");
+                    System.out.println("4. Semua");
+                    System.out.println("0. Kembali");
+                    System.out.print("\n> ");
+                    bst.order(scanInt.nextInt());
+                    break;
                 case 0:
                     stop = true;
                     break;
             }
-
             System.out.println();
         } while (!stop);
     }
