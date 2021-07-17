@@ -13,7 +13,7 @@ public class Searching {
         return -1;
     }
 
-    public static int[] selectionSort(int data[]){
+    public static int[] selectionSort(int[] data){
         for (i = 0; i < data.length - 1; i++){
             pos = i;
             for (j = i + 1; j < data.length; j++){
