@@ -3,7 +3,7 @@ package modul12;
 public class Searching {
     static int temp, pos, i, j, start, end, mid, low, high;
 
-    public static int sequential(int[] data, int cari) {
+    public static int sequentialSearch(int[] data, int cari) {
         for (i = 0; i < data.length; i++) {
             if (data[i] == cari) {
                 return i;
